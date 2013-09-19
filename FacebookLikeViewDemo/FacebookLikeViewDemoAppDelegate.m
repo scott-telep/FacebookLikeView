@@ -21,13 +21,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //Restore cookies
+    /*
     NSData *cookiesData = [[NSUserDefaults standardUserDefaults] objectForKey:SavedHTTPCookiesKey];
     if (cookiesData) {
         NSArray *cookies = [NSKeyedUnarchiver unarchiveObjectWithData:cookiesData];
         for (NSHTTPCookie *cookie in cookies)
             [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
     }
-    
+    */
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
@@ -35,9 +36,11 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Save cookies
+    /*
     NSData *cookiesData = [NSKeyedArchiver archivedDataWithRootObject:[[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies]];
     [[NSUserDefaults standardUserDefaults] setObject:cookiesData
                                               forKey:SavedHTTPCookiesKey];
+     */
 }
 
 
